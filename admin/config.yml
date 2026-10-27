@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: juruenamtnoticias/juruenamtnoticias-site-
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "noticias"
+    label: "Notícias"
+    folder: "noticias"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Imagem", name: "image", widget: "image", required: false }
+      - { label: "Categoria", name: "categoria", widget: "string" }
+      - { label: "Texto da notícia", name: "body", widget: "markdown" }
